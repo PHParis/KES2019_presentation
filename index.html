@@ -80,12 +80,85 @@
 			</section>
 			<section>
 				<h3>Approach</h3>
+				<ul>
+					<li>Direct semantic proof</li>
+					<li>The use of properties</li>
+				</ul>
 			</section>
 			<section>
-				Experiments
-				<section>DBpedia and Wikidata</section>
-				<section>OAEI 2017</section>
+				<section>
+					<h3>Experiments</h3>
+				</section>
+				<section>
+					<h4>DBpedia and Wikidata</h4>
+					<ul>
+						<li class="fragment">From DBpedia 36 people having at least 15 homonyms in Wikidata</li>
+						<li class="fragment">source KB contains 277 instances, 3468 triples and 36
+							candidate instances</li>
+						<li class="fragment">target KB contains 1170 instances,
+							7667 triples and 552 candidate instances</li>
+						<li class="fragment">All owl:sameAs links removed and saved as gold standard</li>
+					</ul>
+					<p class="fragment">91.7% for precision and recall</p>
+				</section>
+				<section>
+					<h4>OAEI 2017</h4>
+					<ul>
+						<li>SPIMBENCH SANDBOX: alterations of an original one
+							through value-based, structure-based, and semantics-aware transformations</li>
+						<li>source KB contains 1432 instances,
+							10883 triples and 349 candidate instances</li>
+						<li>target KB
+							contains 1453 instances, 10868 triples and 443 candidate instances</li>
+					</ul>
+				</section>
+				<section>
+					<h4>OAEI 2017</h4>
+					<table>
+						<thead>
+							<tr>
+								<th>Participants</th>
+								<th>Precision</th>
+								<th>Recall</th>
+								<th>F-Measure</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>AML</td>
+								<td>0.849</td>
+								<td style="font-weight: bold">1.000</td>
+								<td>0.918</td>
+							</tr>
+							<tr>
+								<td>I-Match</td>
+								<td>0.854</td>
+								<td>0.997</td>
+								<td style="font-weight: bold">0.920</td>
+							</tr>
+							<tr>
+								<td>Legato</td>
+								<td style="font-weight: bold">0.980</td>
+								<td>0.730</td>
+								<td>0.840</td>
+							</tr>
+							<tr>
+								<td>LogMap</td>
+								<td>0.938</td>
+								<td>0.763</td>
+								<td>0.841</td>
+							</tr>
+							<tr>
+								<td style="font-weight: bold">Our approach</td>
+								<td>0.854</td>
+								<td>0.996</td>
+								<td style="font-weight: bold">0.920</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
 			</section>
+			<section>Discussion</section>
 			<section>Conclusion</section>
 		</div>
 	</div>
