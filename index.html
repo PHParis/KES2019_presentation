@@ -51,6 +51,7 @@
 			</section>
 			<section>
 				<section>
+					<!-- TODO: revoir cette partie -->
 					<h3>Instance matching is about two main aspects:</h3>
 					<ul>
 						<li>Linking instances together</li>
@@ -93,6 +94,7 @@
 			<!-- <section>why it is important?</section> -->
 			<section>
 				<section>
+					<!-- TODO: modifier aussi l'article -->
 					<h3>Related work</h3>
 					<ul>
 						<li class="fragment">Instance matching</li>
@@ -130,9 +132,31 @@
 				</section>
 				<section>
 					<h5>Direct semantic proof</h5>
+					<ul>
+						<li>sameAs transitivity</li>
+						<li>functional properties</li>
+						<li>maximum cardinality of properties</li>
+						<li>etc.</li>
+					</ul>
+					<blockquote class="fragment">
+						<h6>Example</h6>
+						<span style="font-weight: bolder">If</span> p is a functional property, (x, p, y1) and (x, p,
+						y2)
+						<br>
+						<span style="font-weight: bolder">then</span> (y1, owl:sameAs, y2)
+						<!-- &ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
+						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo; -->
+					</blockquote>
+					<aside class="notes">
+						De manière assez simple, on cherche une preuve sémantique directe d'un lien owl:sameAs entre les
+						deux instantes.
+						Cad, que pour deux instances données, on va regarder si une règle sémantique permettant soit de
+						déduire un lien sameAs, soit un lien differentFrom existe.
+					</aside>
 				</section>
 				<section>
 					<h5>The use of properties</h5>
+					<!-- TODO: -->
 				</section>
 			</section>
 			<section>
@@ -141,6 +165,9 @@
 				</section>
 				<section>
 					<h4>DBpedia and Wikidata</h4>
+					<div class="fragment fade-in-then-out">Test
+						<!-- TODO: expliquer comment on a créé les datasets-->
+					</div>
 					<ul>
 						<li class="fragment">From DBpedia 36 people having at least 15 homonyms in Wikidata</li>
 						<li class="fragment">source KB contains 277 instances, 3468 triples and 36
@@ -208,7 +235,10 @@
 					</table>
 				</section>
 			</section>
-			<section>Discussion</section>
+			<section>
+				<h3>Discussion</h3>
+				<!-- TODO: -->
+			</section>
 			<section>
 				<h3>Conclusion</h3>
 				<ul>
