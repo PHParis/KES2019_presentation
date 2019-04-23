@@ -5,7 +5,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	<title>reveal.js</title>
+	<title>Interlinking RDF-based datasets: A structure-based approach</title>
 
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/reveal.css">
@@ -28,27 +28,69 @@
 	<div class="reveal">
 		<div class="slides">
 			<section>
-				<h2>Enhancing the interlinking quality:</h2>
+				<h2>Interlinking RDF-based datasets:</h2>
 				<h3>A structure-based approach</h3>
 				<p>
 					<small>Pierre-Henri Paris, Fayçal Hamdi, Samira Si-said Cherfi</small>
 				</p>
 				<img data-src="img/cnam.png" alt="Cnam">
 				<img data-src="img/sorbonne.png" alt="Sorbonne Université">
-				<aside class="notes">
+				<!-- <aside class="notes">
 					Mettre l'accent sur la deuxième partie de l'approche qui est la plus
 					grande contribution.
+				</aside> -->
+				<aside class="notes">
+					<ul>
+						<li>Travail réalisé au sein de l'équipe ISID du laboratoire CEDRIC au Cnam</li>
+						<li>Avec S Si-Said Cherfi et F Hamdi</li>
+						<li>Il s'agit d'une approche permettant d'interconnecter des jeux de données au format RDF
+							en utilisant la structure de ce jeux de données.
+						</li>
+					</ul>
 				</aside>
 			</section>
 			<section>
-				<h3>What is instance matching?</h3>
+				<section>
+					<h3>Instance matching is about two main aspects:</h3>
+					<ul>
+						<li>Linking instances together</li>
+						<li>Specifying identical instances</li>
+					</ul>
+					<aside class="notes">
+						<ol></ol>
+					</aside>
+				</section>
+				<section>
+					<h4>Linking instances together</h4>
+					<ul>
+						<li>discover new things (4th principle of Linked Data)</li>
+						<li>Many different properties can be used</li>
+					</ul>
+					<footer style="font-size: medium">https://www.w3.org/DesignIssues/LinkedData.html</footer>
+				</section>
+
+				<section>
+					<h4>Specifying identical instances</h4>
+					<h5>owl:sameAs</h5>
+					<ul>
+						<li>Increase completeness</li>
+						<li>Reduce the gap due to lack of IRI being reused</li>
+						<li>...</li>
+					</ul>
+				</section>
+
+				<!-- <h3>What is instance matching?</h3>
 				<ul>
-					<li class="fragment">Linking datasets together</li>
+					<li class="fragment">Linking datasets together to discover more things</li>
 					<li class="fragment">Identity</li>
 					<li class="fragment">owl:sameAs</li>
 				</ul>
+				<div>https://www.w3.org/DesignIssues/LinkedData.html</div>
+				<aside class="notes">
+					<ol></ol>
+				</aside> -->
 			</section>
-			<section>why it is important?</section>
+			<!-- <section>why it is important?</section> -->
 			<section>
 				<section>
 					<h3>Related work</h3>
@@ -80,10 +122,18 @@
 			</section>
 			<section>
 				<h3>Approach</h3>
-				<ul>
-					<li>Direct semantic proof</li>
-					<li>The use of properties</li>
-				</ul>
+				<section>
+					<ul>
+						<li>Direct semantic proof</li>
+						<li>The use of properties</li>
+					</ul>
+				</section>
+				<section>
+					<h5>Direct semantic proof</h5>
+				</section>
+				<section>
+					<h5>The use of properties</h5>
+				</section>
 			</section>
 			<section>
 				<section>
@@ -127,18 +177,18 @@
 							<tr>
 								<td>AML</td>
 								<td>0.849</td>
-								<td style="font-weight: bold">1.000</td>
+								<td><span style="color:crimson">1.000</span></td>
 								<td>0.918</td>
 							</tr>
 							<tr>
 								<td>I-Match</td>
 								<td>0.854</td>
 								<td>0.997</td>
-								<td style="font-weight: bold">0.920</td>
+								<td><span style="color:crimson">0.920</span></td>
 							</tr>
 							<tr>
 								<td>Legato</td>
-								<td style="font-weight: bold">0.980</td>
+								<td><span style="color:crimson">0.980</span></td>
 								<td>0.730</td>
 								<td>0.840</td>
 							</tr>
@@ -149,17 +199,26 @@
 								<td>0.841</td>
 							</tr>
 							<tr>
-								<td style="font-weight: bold">Our approach</td>
+								<td><span style="color:crimson">Our approach</span></td>
 								<td>0.854</td>
 								<td>0.996</td>
-								<td style="font-weight: bold">0.920</td>
+								<td><span style="color:crimson">0.920</span></td>
 							</tr>
 						</tbody>
 					</table>
 				</section>
 			</section>
 			<section>Discussion</section>
-			<section>Conclusion</section>
+			<section>
+				<h3>Conclusion</h3>
+				<ul>
+					<li>fully automatized instance matching approach</li>
+					<li class="fragment">based on semantics and usage of properties</li>
+					<li class="fragment">Recall is good</li>
+					<li class="fragment">lack of false positive detection</li>
+				</ul>
+				<footer style="font-size: medium">https://github.com/PHParis/im_prototype</footer>
+			</section>
 		</div>
 	</div>
 
