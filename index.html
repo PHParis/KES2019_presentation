@@ -132,7 +132,10 @@
 				<img data-src="img/logmap.png" alt="logmap">
 				<aside class="notes">
 					<ol>
-						<li></li>
+						<li>Récupération des littéraux de chaque instance. Avec une base de connaissances externes, les
+							synonymes aussi sont récupérés.
+							<!--TODO: compléter les 2 parties d'indexations-->
+						</li>
 					</ol>
 				</aside>
 			</section>
@@ -222,36 +225,77 @@
 			<section>
 				<h3>Experiments</h3>
 				<h5>DBpedia and Wikidata</h5>
-				<div class="fragment fade-in-then-out">Test
-					<!-- TODO: expliquer comment on a créé les datasets-->
+				<div>
+					Our <strong>goal</strong> is to evaluate our approach on real-world data
 				</div>
-				<ul>
-					<li class="fragment">From DBpedia 36 people having at least 15 homonyms in Wikidata</li>
-					<li class="fragment">source KB contains 277 instances, 3468 triples and 36
-						candidate instances</li>
-					<li class="fragment">target KB contains 1170 instances,
-						7667 triples and 552 candidate instances</li>
-					<li class="fragment">All owl:sameAs links removed and saved as gold standard</li>
-				</ul>
-				<p class="fragment">91.7% for precision and recall</p>
 			</section>
 			<section>
+				<h3>Experiments</h3>
+				<h5>DBpedia and Wikidata</h5>
+				<!-- <div class="fragment fade-in-then-out">
+				</div> -->
+				<ul>
+					<li>From DBpedia, selection of 36 people each having at least 15 homonyms in Wikidata</li>
+					<li>Source KB contains 277 instances, 3468 triples and 36 candidate instances</li>
+					<li>Target KB contains 1170 instances, 7667 triples and 552 candidate instances</li>
+					<li>All owl:sameAs links removed and saved as gold standard</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Experiments</h3>
+				<h5>DBpedia and Wikidata</h5>
+				<table>
+					<thead>
+						<tr>
+							<th>True positive</th>
+							<th>False positive</th>
+							<th>False Negative</th>
+							<th>Precision</th>
+							<th>Recall</th>
+							<th>F-Measure</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>33</td>
+							<td>3</td>
+							<td>3</td>
+							<td>0.917</td>
+							<td>0.917</td>
+							<td>0.917</td>
+						</tr>
+					</tbody>
+				</table>
+				<ul>
+					<li>The 3 false positives are the same than the false negatives</li>
+					<li>Each times the right candidates was the second one</li>
+					<!-- TODO: dire en quoi c'est bien ou pas -->
+				</ul>
+				<!-- <p class="fragment">91.7% for precision and recall</p> -->
+			</section>
+			<section>
+				<h3>Experiments</h3>
+				<h5>OAEI 2017</h5>
+				<div>
+					Our <strong>goal</strong> is to compare our approach against state of the art approaches that use
+					NLP techniques.
+				</div>
+			</section>
+			<section>
+				<h3>Experiments</h3>
 				<h5>OAEI 2017</h5>
 				<ul>
 					<li>SPIMBENCH SANDBOX: alterations of an original one
 						through value-based, structure-based, and semantics-aware transformations</li>
-					<li>source KB contains 1432 instances,
+					<li>Source KB contains 1432 instances,
 						10883 triples and 349 candidate instances</li>
-					<li>target KB
+					<li>Target KB
 						contains 1453 instances, 10868 triples and 443 candidate instances</li>
 				</ul>
 			</section>
 			<section>
+				<h3>Experiments</h3>
 				<h5>OAEI 2017</h5>
-				<!-- TODO: objectifs de cette xp -->
-			</section>
-			<section>
-				<h4>OAEI 2017</h4>
 				<table>
 					<thead>
 						<tr>
@@ -265,18 +309,18 @@
 						<tr>
 							<td>AML</td>
 							<td>0.849</td>
-							<td><span style="color:crimson">1.000</span></td>
+							<td><span style="color:#dc6414">1.000</span></td>
 							<td>0.918</td>
 						</tr>
 						<tr>
 							<td>I-Match</td>
 							<td>0.854</td>
 							<td>0.997</td>
-							<td><span style="color:crimson">0.920</span></td>
+							<td><span style="color:#dc6414">0.920</span></td>
 						</tr>
 						<tr>
 							<td>Legato</td>
-							<td><span style="color:crimson">0.980</span></td>
+							<td><span style="color:#dc6414">0.980</span></td>
 							<td>0.730</td>
 							<td>0.840</td>
 						</tr>
@@ -287,10 +331,10 @@
 							<td>0.841</td>
 						</tr>
 						<tr>
-							<td><span style="color:crimson">Our approach</span></td>
+							<td><span style="color:#dc6414">Our approach</span></td>
 							<td>0.854</td>
 							<td>0.996</td>
-							<td><span style="color:crimson">0.920</span></td>
+							<td><span style="color:#dc6414">0.920</span></td>
 						</tr>
 					</tbody>
 				</table>
@@ -299,12 +343,19 @@
 				</aside>
 			</section>
 			<section>
+				<h3>Experiments</h3>
+				<h5>OAEI 2017</h5>
+				<ul>
+					<!-- TODO: dire en quoi c'est bien ou pas, décrire les résultats, force et faiblesses -->
+				</ul>
+			</section>
+			<section>
 				<h3>Conclusion</h3>
 				<ul>
-					<li>fully automatized instance matching approach</li>
-					<li class="fragment">based on semantics and usage of properties</li>
+					<li>Fully automatized instance matching approach</li>
+					<li class="fragment">Based on semantics and usage of properties</li>
 					<li class="fragment">Recall is good</li>
-					<li class="fragment">lack of false positive detection</li>
+					<li class="fragment">Lack of false positive detection</li>
 				</ul>
 				<footer style="font-size: medium">https://github.com/PHParis/im_prototype</footer>
 			</section>
