@@ -50,48 +50,48 @@
 				</aside>
 			</section>
 			<section>
-				<section>
-					<!-- TODO: revoir cette partie -->
-					<h3>Instance matching is about two main aspects:</h3>
-					<ul>
-						<li>Linking instances together</li>
-						<li>Specifying identical instances</li>
-					</ul>
-					<aside class="notes">
-						<ol></ol>
-					</aside>
-				</section>
-				<section>
-					<h4>Linking instances together</h4>
-					<ul>
-						<li>discover new things (4th principle of Linked Data)</li>
-						<li>Many different properties can be used</li>
-					</ul>
-					<footer style="font-size: medium">https://www.w3.org/DesignIssues/LinkedData.html</footer>
-				</section>
-
-				<section>
-					<h4>Specifying identical instances</h4>
-					<h5>owl:sameAs</h5>
-					<ul>
-						<li>Increase completeness</li>
-						<li>Reduce the gap due to lack of IRI being reused</li>
-						<li>...</li>
-					</ul>
-				</section>
-
-				<!-- <h3>What is instance matching?</h3>
+				<!-- TODO: revoir cette partie -->
+				<h3>Instance matching is about two main aspects:</h3>
 				<ul>
-					<li class="fragment">Linking datasets together to discover more things</li>
-					<li class="fragment">Identity</li>
-					<li class="fragment">owl:sameAs</li>
+					<li>Linking instances together</li>
+					<li>Specifying identical instances</li>
 				</ul>
-				<div>https://www.w3.org/DesignIssues/LinkedData.html</div>
 				<aside class="notes">
 					<ol></ol>
-				</aside> -->
+				</aside>
+			</section>
+			<section>
+				<!-- TODO: revoir cette partie -->
+				<h3>Instance matching is about two main aspects:</h3>
+				<ul>
+					<li>Linking instances together</li>
+					<li>Specifying identical instances</li>
+				</ul>
+				<ul>
+					<li>discover new things (4th principle of Linked Data)</li>
+					<li>Many different properties can be used</li>
+				</ul>
+				<h5>owl:sameAs</h5>
+				<ul>
+					<li>Increase completeness</li>
+					<li>Reduce the gap due to lack of IRI being reused</li>
+					<li>...</li>
+				</ul>
+				<footer style="font-size: medium">https://www.w3.org/DesignIssues/LinkedData.html</footer>
+				<aside class="notes">
+					<ol></ol>
+				</aside>
 			</section>
 			<!-- <section>why it is important?</section> -->
+			<section>
+				<img data-src="img/legato.png" alt="legato">
+			</section>
+			<section>
+				<img data-src="img/logmap.png" alt="logmap">
+			</section>
+			<section>
+				<img data-src="img/imatch.png" alt="imatch">
+			</section>
 			<section>
 				<section>
 					<!-- TODO: parler uniquement des 4 approches avec
@@ -125,120 +125,122 @@
 			</section>
 			<section>
 				<h3>Approach</h3>
-				<section>
-					<ul>
-						<li>Direct semantic proof</li>
-						<li>The use of properties</li>
-					</ul>
-				</section>
-				<section>
-					<h5>Direct semantic proof</h5>
-					<ul>
-						<li>sameAs transitivity</li>
-						<li>functional properties</li>
-						<li>maximum cardinality of properties</li>
-						<li>etc.</li>
-					</ul>
-					<blockquote class="fragment">
-						<h6>Example</h6>
-						<span style="font-weight: bolder">If</span> p is a functional property, (x, p, y1) and (x, p,
-						y2)
-						<br>
-						<span style="font-weight: bolder">then</span> (y1, owl:sameAs, y2)
-						<!-- &ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo; -->
-					</blockquote>
-					<aside class="notes">
-						De manière assez simple, on cherche une preuve sémantique directe d'un lien owl:sameAs entre les
-						deux instantes.
-						Cad, que pour deux instances données, on va regarder si une règle sémantique permettant soit de
-						déduire un lien sameAs, soit un lien differentFrom existe.
-					</aside>
-				</section>
-				<section>
-					<h5>The use of properties</h5>
-					<!-- TODO: -->
-				</section>
+				<ul>
+					<li>Direct semantic proof</li>
+					<li>The use of properties</li>
+				</ul>
 			</section>
 			<section>
-				<section>
-					<h3>Experiments</h3>
-				</section>
-				<section>
-					<h4>DBpedia and Wikidata</h4>
-					<div class="fragment fade-in-then-out">Test
-						<!-- TODO: expliquer comment on a créé les datasets-->
-					</div>
-					<ul>
-						<li class="fragment">From DBpedia 36 people having at least 15 homonyms in Wikidata</li>
-						<li class="fragment">source KB contains 277 instances, 3468 triples and 36
-							candidate instances</li>
-						<li class="fragment">target KB contains 1170 instances,
-							7667 triples and 552 candidate instances</li>
-						<li class="fragment">All owl:sameAs links removed and saved as gold standard</li>
-					</ul>
-					<p class="fragment">91.7% for precision and recall</p>
-				</section>
-				<section>
-					<h4>OAEI 2017</h4>
-					<ul>
-						<li>SPIMBENCH SANDBOX: alterations of an original one
-							through value-based, structure-based, and semantics-aware transformations</li>
-						<li>source KB contains 1432 instances,
-							10883 triples and 349 candidate instances</li>
-						<li>target KB
-							contains 1453 instances, 10868 triples and 443 candidate instances</li>
-					</ul>
-				</section>
-				<section>
-					<h4>OAEI 2017</h4>
-					<table>
-						<thead>
-							<tr>
-								<th>Participants</th>
-								<th>Precision</th>
-								<th>Recall</th>
-								<th>F-Measure</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>AML</td>
-								<td>0.849</td>
-								<td><span style="color:crimson">1.000</span></td>
-								<td>0.918</td>
-							</tr>
-							<tr>
-								<td>I-Match</td>
-								<td>0.854</td>
-								<td>0.997</td>
-								<td><span style="color:crimson">0.920</span></td>
-							</tr>
-							<tr>
-								<td>Legato</td>
-								<td><span style="color:crimson">0.980</span></td>
-								<td>0.730</td>
-								<td>0.840</td>
-							</tr>
-							<tr>
-								<td>LogMap</td>
-								<td>0.938</td>
-								<td>0.763</td>
-								<td>0.841</td>
-							</tr>
-							<tr>
-								<td><span style="color:crimson">Our approach</span></td>
-								<td>0.854</td>
-								<td>0.996</td>
-								<td><span style="color:crimson">0.920</span></td>
-							</tr>
-						</tbody>
-					</table>
-				</section>
+				<h3>Approach</h3>
+				<h5>Direct semantic proof</h5>
+				<ul>
+					<li>sameAs transitivity</li>
+					<li>functional properties</li>
+					<li>maximum cardinality of properties</li>
+					<li>etc.</li>
+				</ul>
+				<blockquote class="fragment">
+					<h6>Example</h6>
+					<span style="font-weight: bolder">If</span> p is a functional property, (x, p, y1) and (x, p,
+					y2)
+					<br>
+					<span style="font-weight: bolder">then</span> (y1, owl:sameAs, y2)
+					<!-- &ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
+					reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo; -->
+				</blockquote>
+				<aside class="notes">
+					De manière assez simple, on cherche une preuve sémantique directe d'un lien owl:sameAs entre les
+					deux instantes.
+					Cad, que pour deux instances données, on va regarder si une règle sémantique permettant soit de
+					déduire un lien sameAs, soit un lien differentFrom existe.
+				</aside>
 			</section>
-			<!-- <section>
-				<h3>Discussion</h3>
-			</section> -->
+			<section>
+				<h3>Approach</h3>
+				<h5>The use of properties</h5>
+				<!-- TODO: -->
+				<aside class="notes">
+				</aside>
+			</section>
+			<section>
+				<h3>Experiments</h3>
+				<h5>DBpedia and Wikidata</h5>
+				<div class="fragment fade-in-then-out">Test
+					<!-- TODO: expliquer comment on a créé les datasets-->
+				</div>
+				<ul>
+					<li class="fragment">From DBpedia 36 people having at least 15 homonyms in Wikidata</li>
+					<li class="fragment">source KB contains 277 instances, 3468 triples and 36
+						candidate instances</li>
+					<li class="fragment">target KB contains 1170 instances,
+						7667 triples and 552 candidate instances</li>
+					<li class="fragment">All owl:sameAs links removed and saved as gold standard</li>
+				</ul>
+				<p class="fragment">91.7% for precision and recall</p>
+			</section>
+			<section>
+				<h5>OAEI 2017</h5>
+				<ul>
+					<li>SPIMBENCH SANDBOX: alterations of an original one
+						through value-based, structure-based, and semantics-aware transformations</li>
+					<li>source KB contains 1432 instances,
+						10883 triples and 349 candidate instances</li>
+					<li>target KB
+						contains 1453 instances, 10868 triples and 443 candidate instances</li>
+				</ul>
+			</section>
+			<section>
+				<h5>OAEI 2017</h5>
+				<!-- TODO: objectifs de cette xp -->
+			</section>
+			<section>
+				<h4>OAEI 2017</h4>
+				<table>
+					<thead>
+						<tr>
+							<th>Participants</th>
+							<th>Precision</th>
+							<th>Recall</th>
+							<th>F-Measure</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>AML</td>
+							<td>0.849</td>
+							<td><span style="color:crimson">1.000</span></td>
+							<td>0.918</td>
+						</tr>
+						<tr>
+							<td>I-Match</td>
+							<td>0.854</td>
+							<td>0.997</td>
+							<td><span style="color:crimson">0.920</span></td>
+						</tr>
+						<tr>
+							<td>Legato</td>
+							<td><span style="color:crimson">0.980</span></td>
+							<td>0.730</td>
+							<td>0.840</td>
+						</tr>
+						<tr>
+							<td>LogMap</td>
+							<td>0.938</td>
+							<td>0.763</td>
+							<td>0.841</td>
+						</tr>
+						<tr>
+							<td><span style="color:crimson">Our approach</span></td>
+							<td>0.854</td>
+							<td>0.996</td>
+							<td><span style="color:crimson">0.920</span></td>
+						</tr>
+					</tbody>
+				</table>
+				<aside class="notes">
+					<!-- TODO: expliquer les résultas -->
+				</aside>
+			</section>
 			<section>
 				<h3>Conclusion</h3>
 				<ul>
