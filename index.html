@@ -194,17 +194,16 @@
 				<h3>Approach</h3>
 				<h5>Direct semantic proof</h5>
 				<ul>
-					<li>sameAs transitivity</li>
-					<li>functional properties</li>
-					<li>maximum cardinality of properties</li>
-					<li>etc.</li>
+					<li>owl:sameAs transitivity</li>
+					<li>Functional properties</li>
+					<li>Maximum cardinality of properties, etc.</li>
 				</ul>
-				<blockquote class="fragment">
+				<blockquote class="fragment" style="font-size: xx-large">
 					<h6>Example</h6>
-					<span style="font-weight: bolder">If</span> p is a functional property, (x, p, y1) and (x, p,
-					y2)
+					<span style="font-weight: bolder">If</span> hasFather is a functional property, (:John, hasFather, ns1:Bill) and (:John, hasFather,
+					ns2:William)
 					<br>
-					<span style="font-weight: bolder">then</span> (y1, owl:sameAs, y2)
+					<span style="font-weight: bolder">then</span> (ns1:Bill, owl:sameAs, ns2:William)
 					<!-- &ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
 					reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo; -->
 				</blockquote>
@@ -218,6 +217,44 @@
 			<section>
 				<h3>Approach</h3>
 				<h5>The use of properties</h5>
+				<p style="text-align: left">First intuition (weight of a role):</p>
+				<p style="text-align: left">If 90% of the People’s instances use the role <span style="font-style: italic">name</span> but only 8% of those instances use the role <span style="font-style: italic">ownerOf</span>,
+				then <span style="font-style: italic">ownerOf</span> might help more to determine (the absence of) an identity relation between two instances.</p>				
+				<aside class="notes">
+				</aside>
+			</section>
+			<section>
+				<h3>Approach</h3>
+				<h5>The use of properties</h5>
+				<p style="text-align: left">Second intuition (discriminating power of a role-value pair):</p>
+				<p style="text-align: left">If we have 100 instances with the role-object &lt;town, Paris&gt; but only 3 instances with the role-object
+						&lt;town, Peyrabout&gt;, then the couple &lt;town, Peyrabout&gt; helps to discriminate more instances.
+				<aside class="notes">
+				</aside>
+			</section>
+			<section>
+				<h3>Approach</h3>
+				<h5>The use of properties</h5>
+				<p style="text-align: left">Weight of evidences:</p>
+				<p style="text-align: left">If x1, x2 and x3 are three instances where x1 is from the source KB and x2 and x3 are from the target KB. If
+					 we have four evidences between x1 and x2, and eight evidences between x1 and x3 then
+				we give a bonus to the comparison with the more evidences to present.</p>
+				<aside class="notes">
+				</aside>
+			</section>
+			<section>
+				<h3>Approach</h3>
+				<h5>The use of properties</h5>
+				<p style="text-align: left">Depth of a concept:</p>
+				<p>If $\mathcal{KB}=dbo$\footnote{DBpedia ontology : \url{http://wiki.dbpedia.org/services-resources/ontology}} 
+				then $depth_{dbo}(Agent)=1$ and $depth_{dbo}(Biologist)=4$ since $Agent$ is a direct sub concept of $owl{:}Thing$ 
+				and $Biologist\sqsubseteq Scientist\sqsubseteq Person\sqsubseteq Agent\sqsubseteq owl{:}Thing$.</p>
+				<aside class="notes">
+				</aside>
+			</section>
+			<section>
+				<h3>Approach</h3>
+				<h5>The use of properties</h5>
 				<!-- TODO: -->
 				<aside class="notes">
 				</aside>
@@ -226,7 +263,7 @@
 				<h3>Experiments</h3>
 				<h5>DBpedia and Wikidata</h5>
 				<div>
-					Our <strong>goal</strong> is to evaluate our approach on real-world data
+					Our <strong>goal</strong> is to evaluate our approach on real-world datasets.
 				</div>
 			</section>
 			<section>
@@ -234,9 +271,12 @@
 				<h5>DBpedia and Wikidata</h5>
 				<!-- <div class="fragment fade-in-then-out">
 				</div> -->
+				<div>Construction of source and target KBs</div>
 				<ul>
-					<li>From DBpedia, selection of 36 people each having at least 15 homonyms in Wikidata</li>
-					<!-- TODO: plus de détails sur la construction des datasets -->
+					<li>DBpedia 2016-10 and DBpedia-Wikidata 03.30.2015</li>
+					<li>From DBpedia, selection of 36 people each having at least 15 homonyms in Wikidata (rdfs:label)</li>
+					<li>Source KB contains all statements having one of this 36 people in subject or object</li>
+					<li>Target KB contains all  statements having one of this homonyms in subject or object</li>
 				</ul>
 			</section>
 			<section>
@@ -293,10 +333,8 @@
 			<section>
 				<h3>Experiments</h3>
 				<h5>OAEI 2017</h5>
-				<ul>
-					<li>SPIMBENCH SANDBOX: alterations of an original one
-						through value-based, structure-based, and semantics-aware transformations</li>
-				</ul>
+				SPIMBENCH SANDBOX: alterations of an original one
+				through value-based, structure-based, and semantics-aware transformations
 			</section>
 			<section>
 				<h3>Experiments</h3>
@@ -384,6 +422,12 @@
 		// - https://github.com/hakimel/reveal.js#configuration
 		// - https://github.com/hakimel/reveal.js#dependencies
 		Reveal.initialize({
+			// math: {
+			// 	mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+			// 	config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+			// 	// pass other options into `MathJax.Hub.Config()`
+			// 	TeX: { Macros: macros }
+			// },
 			dependencies: [{
 					src: 'plugin/markdown/marked.js'
 				},
@@ -397,7 +441,8 @@
 				{
 					src: 'plugin/highlight/highlight.js',
 					async: true
-				}
+				},
+				{ src: 'plugin/markdown/MathJax.js', async: true }
 			]
 		});
 	</script>
