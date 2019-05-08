@@ -126,7 +126,7 @@
 					</ol>
 				</aside>
 			</section>
-			<section>
+			<!-- <section>
 				<h3>Related work</h3>
 				<h5>Logmap</h5>
 				<img data-src="img/logmap.png" alt="logmap">
@@ -134,11 +134,11 @@
 					<ol>
 						<li>Récupération des littéraux de chaque instance. Avec une base de connaissances externes, les
 							synonymes aussi sont récupérés.
-							<!--TODO: compléter les 2 parties d'indexations-->
+							TODO: compléter les 2 parties d'indexations
 						</li>
 					</ol>
 				</aside>
-			</section>
+			</section> -->
 			<section>
 				<h3>Related work</h3>
 				<h5>I-Match</h5>
@@ -235,7 +235,7 @@
 			<section>
 				<h3>Approach</h3>
 				<h5>The use of properties</h5>
-				<p style="text-align: left">Weight of evidences:</p>
+				<p style="text-align: left">Weight of evidence:</p>
 				<p style="text-align: left">If x1, x2 and x3 are three instances where x1 is from the source KB and x2 and x3 are from the target KB. If
 					 we have four evidences between x1 and x2, and eight evidences between x1 and x3 then
 				we give a bonus to the comparison with the more evidences to present.</p>
@@ -254,8 +254,21 @@
 			</section>
 			<section>
 				<h3>Approach</h3>
-				<h5>The use of properties</h5>
+				<h5>Main algorithm</h5>
 				<!-- TODO: -->
+<pre><code class="Python" data-line-numbers>if IsSemProof(x1, x2): 
+  return SemProofValue(x1, x2)
+scores = []
+C = deepest common concept between x1 and x2
+for R in {common roles between x1 and x2}:
+  (maxSim, o) = max(R, x1, x2)
+  subscore = Aggregation_1(
+     maxSim,
+     (1 - WKBs(R, C)),
+     (1 - DKBs(C, R, o)))
+  scores.append(subscore)
+return Aggregation_2(weight of evidence, SubAggregation(scores))
+</code></pre>
 				<aside class="notes">
 				</aside>
 			</section>
@@ -400,6 +413,9 @@
 				<h5>OAEI 2017</h5>
 				<ul>
 					<!-- TODO: dire en quoi c'est bien ou pas, décrire les résultats, force et faiblesses -->
+					<li>Very similar instances XXX</li>
+					<li>arithmetic mean</li>
+					<li>Use both KBs</li>
 				</ul>
 			</section>
 			<section>
@@ -408,7 +424,11 @@
 					<li>Fully automatized instance matching approach</li>
 					<li class="fragment">Based on semantics and usage of properties</li>
 					<li class="fragment">Recall is good</li>
-					<li class="fragment">Lack of false positive detection</li>
+					<li class="fragment">Lack of false positive detection/correction</li>
+				</ul>
+				<ul>
+					<li>Explore other ways to aggregate the different scores</li>
+					<li>Refine linkset we produced to have fewer false positives results</li>
 				</ul>
 				<footer style="font-size: medium">https://github.com/PHParis/im_prototype</footer>
 			</section>
@@ -445,6 +465,7 @@
 				{ src: 'plugin/math/math.js', async: true }
 			]
 		});
+		Reveal.configure({ slideNumber: true });
 	</script>
 </body>
 
