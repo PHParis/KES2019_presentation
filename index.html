@@ -63,10 +63,12 @@
 					<ul>
 						<li>Discover new knowledge (indiscernibility of identicals)</li>
 						<li>Data integration</li>
+						<li>etc.</li>
 					</ul>
 				</div>
 				<aside class="notes">
 					<ol>
+						<li>Appariement d'instances</li>
 						<li>Qu'est-ce que l'appariement d'instances ? Il s'agit de lié des instances ensembles
 							et plus précisément de trouver des liens d'identité entre instances lorsqu'on utilise
 							la propriété owl:sameAs. Cela permet aussi de lier des jeux de données entre eux.
@@ -294,17 +296,6 @@ return Aggregation_2(weight of evidence, scores)
 			<section>
 				<h3>Experiments</h3>
 				<h5>DBpedia and Wikidata</h5>
-				<!-- <div class="fragment fade-in-then-out">
-				</div> -->
-				<ul>
-					<li>Source KB contains 277 instances, 3468 triples and 36 candidate instances</li>
-					<li>Target KB contains 1170 instances, 7667 triples and 552 candidate instances</li>
-					<li>All owl:sameAs links removed and saved as gold standard</li>
-				</ul>
-			</section>
-			<section>
-				<h3>Experiments</h3>
-				<h5>DBpedia and Wikidata</h5>
 				<table>
 					<thead>
 						<tr>
@@ -347,17 +338,6 @@ return Aggregation_2(weight of evidence, scores)
 				<h5>OAEI 2017</h5>
 				SPIMBENCH SANDBOX: alterations of an original one
 				through value-based, structure-based, and semantics-aware transformations
-			</section>
-			<section>
-				<h3>Experiments</h3>
-				<h5>OAEI 2017</h5>
-				<ul>
-					<li>Source KB contains 1432 instances,
-						10883 triples and 349 candidate instances</li>
-					<li>Target KB
-						contains 1453 instances, 10868 triples and 443 candidate instances</li>
-					<li>Gold standard provided</li>
-				</ul>
 			</section>
 			<section>
 				<h3>Experiments</h3>
@@ -412,8 +392,8 @@ return Aggregation_2(weight of evidence, scores)
 				<h5>OAEI 2017</h5>
 				<ul>
 					<!-- TODO: dire en quoi c'est bien ou pas, décrire les résultats, force et faiblesses -->
-					<li>Very similar instances XXX</li>
-					<li>arithmetic mean</li>
+					<li>Wrong candidate selection with very similar instances</li>
+					<li>Arithmetic mean</li>
 					<li>Use both KBs</li>
 				</ul>
 			</section>
@@ -424,8 +404,8 @@ return Aggregation_2(weight of evidence, scores)
 					<li class="fragment">Based on semantics and usage of properties</li>
 					<li class="fragment">Recall is good</li>
 					<li class="fragment">Lack of false positive detection/correction</li>
-					<li>Explore other ways to aggregate the different scores</li>
-					<li>Refine linkset we produced to have fewer false positives results</li>
+					<li class="fragment">Explore other ways to aggregate the different scores</li>
+					<li class="fragment">Refine linkset we produced to have fewer false positives results</li>
 				</ul>
 				<!-- <ul>
 					<li>Explore other ways to aggregate the different scores</li>
@@ -433,6 +413,29 @@ return Aggregation_2(weight of evidence, scores)
 				</ul> -->
 				<footer style="font-size: medium">https://github.com/PHParis/im_prototype</footer>
 			</section>
+			<section>
+				<h3>Experiments</h3>
+				<h5>DBpedia and Wikidata</h5>
+				<!-- <div class="fragment fade-in-then-out">
+				</div> -->
+				<ul>
+					<li>Source KB contains 277 instances, 3468 triples and 36 candidate instances</li>
+					<li>Target KB contains 1170 instances, 7667 triples and 552 candidate instances</li>
+					<li>All owl:sameAs links removed and saved as gold standard</li>
+				</ul>
+			</section>
+			<section>
+				<h3>Experiments</h3>
+				<h5>OAEI 2017</h5>
+				<ul>
+					<li>Source KB contains 1432 instances,
+						10883 triples and 349 candidate instances</li>
+					<li>Target KB
+						contains 1453 instances, 10868 triples and 443 candidate instances</li>
+					<li>Gold standard provided</li>
+				</ul>
+			</section>
+			<section></section>
 		</div>
 	</div>
 
