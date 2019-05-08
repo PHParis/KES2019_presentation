@@ -246,7 +246,7 @@
 				<h3>Approach</h3>
 				<h5>The use of properties</h5>
 				<p style="text-align: left">Depth of a concept:</p>
-				<p>If $\mathcal{KB}=dbo$\footnote{DBpedia ontology : \url{http://wiki.dbpedia.org/services-resources/ontology}} 
+				<p style="text-align: left">If $\mathcal{KB}=dbo$
 				then $depth_{dbo}(Agent)=1$ and $depth_{dbo}(Biologist)=4$ since $Agent$ is a direct sub concept of $owl{:}Thing$ 
 				and $Biologist\sqsubseteq Scientist\sqsubseteq Person\sqsubseteq Agent\sqsubseteq owl{:}Thing$.</p>
 				<aside class="notes">
@@ -422,12 +422,12 @@
 		// - https://github.com/hakimel/reveal.js#configuration
 		// - https://github.com/hakimel/reveal.js#dependencies
 		Reveal.initialize({
-			// math: {
-			// 	mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
-			// 	config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
-			// 	// pass other options into `MathJax.Hub.Config()`
-			// 	TeX: { Macros: macros }
-			// },
+			math: {
+				mathjax: 'plugin/math/MathJax-master/MathJax.js',//'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+				config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+				// pass other options into `MathJax.Hub.Config()`
+				// TeX: { Macros: macros }
+			},
 			dependencies: [{
 					src: 'plugin/markdown/marked.js'
 				},
@@ -442,7 +442,7 @@
 					src: 'plugin/highlight/highlight.js',
 					async: true
 				},
-				{ src: 'plugin/markdown/MathJax.js', async: true }
+				{ src: 'plugin/math/math.js', async: true }
 			]
 		});
 	</script>
