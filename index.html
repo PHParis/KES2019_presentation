@@ -202,7 +202,8 @@
 				</ul>
 				<blockquote class="fragment" style="font-size: xx-large">
 					<h6>Example</h6>
-					<span style="font-weight: bolder">If</span> hasFather is a functional property, (:John, hasFather, ns1:Bill) and (:John, hasFather,
+					<span style="font-weight: bolder">If</span> hasFather is a functional property, (:John, hasFather,
+					ns1:Bill) and (:John, hasFather,
 					ns2:William)
 					<br>
 					<span style="font-weight: bolder">then</span> (ns1:Bill, owl:sameAs, ns2:William)
@@ -220,8 +221,11 @@
 				<h3>Approach</h3>
 				<h5>The use of properties</h5>
 				<p style="text-align: left">First intuition (weight of a role):</p>
-				<p style="text-align: left">If 90% of the People’s instances use the role <span style="font-style: italic">name</span> but only 8% of those instances use the role <span style="font-style: italic">ownerOf</span>,
-				then <span style="font-style: italic">ownerOf</span> might help more to determine (the absence of) an identity relation between two instances.</p>				
+				<p style="text-align: left">If 90% of the People’s instances use the role <span
+						style="font-style: italic">name</span> but only 8% of those instances use the role <span
+						style="font-style: italic">ownerOf</span>,
+					then <span style="font-style: italic">ownerOf</span> might help more to determine (the absence of)
+					an identity relation between two instances.</p>
 				<aside class="notes">
 				</aside>
 			</section>
@@ -229,18 +233,21 @@
 				<h3>Approach</h3>
 				<h5>The use of properties</h5>
 				<p style="text-align: left">Second intuition (discriminating power of a role-value pair):</p>
-				<p style="text-align: left">If we have 100 instances with the role-value &lt;town, Paris&gt; but only 3 instances with the role-value
-						&lt;town, Peyrabout&gt;, then the couple &lt;town, Peyrabout&gt; helps to discriminate more instances.
-				<aside class="notes">
-				</aside>
+				<p style="text-align: left">If we have 100 instances with the role-value &lt;town, Paris&gt; but only 3
+					instances with the role-value
+					&lt;town, Peyrabout&gt;, then the couple &lt;town, Peyrabout&gt; helps to discriminate more
+					instances.
+					<aside class="notes">
+					</aside>
 			</section>
 			<section>
 				<h3>Approach</h3>
 				<h5>The use of properties</h5>
 				<p style="text-align: left">Weight of evidence:</p>
-				<p style="text-align: left">If x1, x2 and x3 are three instances where x1 is from the source KB and x2 and x3 are from the target KB. If
-					 we have four evidences between x1 and x2, and eight evidences between x1 and x3 then
-				we give a bonus to the comparison with the more evidences to present.</p>
+				<p style="text-align: left">If x1, x2 and x3 are three instances where x1 is from the source KB and x2
+					and x3 are from the target KB. If
+					we have four evidences between x1 and x2, and eight evidences between x1 and x3 then
+					we give a bonus to the comparison with the more evidences to present.</p>
 				<aside class="notes">
 				</aside>
 			</section>
@@ -249,15 +256,16 @@
 				<h5>The use of properties</h5>
 				<p style="text-align: left">Depth of a concept:</p>
 				<p style="text-align: left">If $\mathcal{KB}=dbo$
-				then $depth_{dbo}(Agent)=1$ and $depth_{dbo}(Biologist)=4$ since $Agent$ is a direct sub concept of $owl{:}Thing$ 
-				and $Biologist\sqsubseteq Scientist\sqsubseteq Person\sqsubseteq Agent\sqsubseteq owl{:}Thing$.</p>
+					then $depth_{dbo}(Agent)=1$ and $depth_{dbo}(Biologist)=4$ since $Agent$ is a direct sub concept of
+					$owl{:}Thing$
+					and $Biologist\sqsubseteq Scientist\sqsubseteq Person\sqsubseteq Agent\sqsubseteq owl{:}Thing$.</p>
 				<aside class="notes">
 				</aside>
 			</section>
 			<section>
 				<h3>Approach</h3>
 				<h5>Main algorithm</h5>
-<pre><code class="Python" data-line-numbers>if IsSemProof(x1, x2): 
+				<pre><code class="Python" data-line-numbers>if IsSemProof(x1, x2): 
   return SemProofValue(x1, x2)
 scores = []
 C = deepest common concept between x1 and x2
@@ -288,9 +296,10 @@ return Aggregation_2(weight of evidence, scores)
 				<div>Construction of source and target KBs</div>
 				<ul>
 					<li>DBpedia 2016-10 and DBpedia-Wikidata 03.30.2015</li>
-					<li>From DBpedia, selection of 36 people each having at least 15 homonyms in Wikidata (rdfs:label)</li>
+					<li>From DBpedia, selection of 36 people each having at least 15 homonyms in Wikidata (rdfs:label)
+					</li>
 					<li>Source KB contains all statements having one of this 36 people in subject or object</li>
-					<li>Target KB contains all  statements having one of this homonyms in subject or object</li>
+					<li>Target KB contains all statements having one of this homonyms in subject or object</li>
 				</ul>
 			</section>
 			<section>
@@ -435,7 +444,21 @@ return Aggregation_2(weight of evidence, scores)
 					<li>Gold standard provided</li>
 				</ul>
 			</section>
-			<section></section>
+			<section>
+				<h6>Weight of a role</h6>
+				<p>$W_{\mathcal{KB}}(R,C)=\frac{NS_{\mathcal{KB}}(C,R)}{NS_{\mathcal{KB}}(C)}$ and
+					$W_{\mathcal{KB}}(R,C)\in [0,1]$</p>
+			</section>
+			<section>
+				<h6>Discriminating power</h6>
+				<p>$D_{\mathcal{KB}}(C,R,o)=\frac{NS_{\mathcal{KB}}(C,R,o)}{NS_{\mathcal{KB}}(C,R)}$ and
+					$D_{\mathcal{KB}}(C,R,o)\in [0,1]$</p>
+			</section>
+			<section>
+				<h6>Weight of an evidence</h6>
+				<p>$\frac{\mid R_{x_1}\cap R_{x_2}\mid}{\mid R_{x_1}\mid +\mid R_{x_2}\mid -
+					\mid R_{x_1}\cap R_{x_2}\mid}$, where $evidence\in [0,1]$</p>
+			</section>
 		</div>
 	</div>
 
@@ -447,8 +470,8 @@ return Aggregation_2(weight of evidence, scores)
 		// - https://github.com/hakimel/reveal.js#dependencies
 		Reveal.initialize({
 			math: {
-				mathjax: 'plugin/math/MathJax-master/MathJax.js',//'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
-				config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+				mathjax: 'plugin/math/MathJax-master/MathJax.js', //'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+				config: 'TeX-AMS_HTML-full' // See http://docs.mathjax.org/en/latest/config-files.html
 				// pass other options into `MathJax.Hub.Config()`
 				// TeX: { Macros: macros }
 			},
@@ -466,10 +489,15 @@ return Aggregation_2(weight of evidence, scores)
 					src: 'plugin/highlight/highlight.js',
 					async: true
 				},
-				{ src: 'plugin/math/math.js', async: true }
+				{
+					src: 'plugin/math/math.js',
+					async: true
+				}
 			]
 		});
-		Reveal.configure({ slideNumber: true });
+		Reveal.configure({
+			slideNumber: true
+		});
 	</script>
 </body>
 
