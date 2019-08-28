@@ -259,11 +259,11 @@
 			<section>
 				<h3>Approach</h3>
 				<h5>The use of properties</h5>
-				<p style="text-align: left">Weight of evidence:</p>
+				<p style="text-align: left">Weight of clue:</p>
 				<p style="text-align: left">If x1, x2 and x3 are three instances where x1 is from the source KB and x2
 					and x3 are from the target KB. If
-					we have four evidences between x1 and x2, and eight evidences between x1 and x3 then
-					<span style="color:#dc6414">we give a bonus to the comparison with the more evidences to
+					we have four clues between x1 and x2, and eight clues between x1 and x3 then
+					<span style="color:#dc6414">we give a bonus to the comparison with the more clues to
 						present</span>.</p>
 				<aside class="notes">
 				</aside>
@@ -293,7 +293,7 @@ for R in {common roles between x1 and x2}:
      (1 - WKBs(R, C)),
      (1 - DKBs(C, R, o)))
   scores.append(subscore)
-return Aggregation_2(weight of evidence, scores)
+return Aggregation_2(weight of clue, scores)
 </code></pre>
 				<aside class="notes">
 				</aside>
@@ -473,9 +473,9 @@ return Aggregation_2(weight of evidence, scores)
 					$D_{\mathcal{KB}}(C,R,o)\in [0,1]$</p>
 			</section>
 			<section>
-				<h6>Weight of an evidence</h6>
+				<h6>Weight of a clue</h6>
 				<p>$\frac{\mid R_{x_1}\cap R_{x_2}\mid}{\mid R_{x_1}\mid +\mid R_{x_2}\mid -
-					\mid R_{x_1}\cap R_{x_2}\mid}$, where $evidence\in [0,1]$</p>
+					\mid R_{x_1}\cap R_{x_2}\mid}$, where $clue\in [0,1]$</p>
 			</section>
 		</div>
 	</div>
