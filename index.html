@@ -109,7 +109,24 @@
 				<h5>Legato</h5>
 				<img data-src="img/legato.png" alt="legato">
 				<aside class="notes">
-					<ol>
+				<ol>
+					<li>propriétés problématiques</li>
+					<li>descriptions à l'aide littéraux</li>
+					<li>Pour chaque description, les termes sont tokenizés et pondéré avec leur TF-IDF
+						(term frequency-inverse document frequency), puis projetées dans un espace vectoriel.
+						Lors de la phase de pre-matching, c'est la similarité cosinus qui est utilisée pour apparier
+						les vecteurs entre eux.</li>
+					<li>
+						La dernière phase de réparation sert à vérifier que les liens trouvés sont correctes et donc
+						à diminuer les faux positifs (et augmenter la précision). Ici c'est un algorithme de
+						clustering qui est utilisé pour
+						créer des groupes d'instances au sein d'un jeu de données. Ensuite, pour deux groupes
+						similaires appartenant chacun à un jeu de données ils essaient de trouver une propriété
+						servant de clé et classe les couples en fonction de cette clé et utilise au cas ou plusieurs
+						candidats sont possibles ceui qui a la similarité la plus forte.
+					</li>
+				</ol>
+					{% comment %} <ol>
 						<li>Repérage des propriétés dites problématiques comme les commentaires</li>
 						<li>Création de descriptions à l'aide des propriétés littérales</li>
 						<li>Pour chaque description, les termes sont tokenizés et pondéré avec leur TF-IDF
@@ -125,7 +142,7 @@
 							servant de clé et classe les couples en fonction de cette clé et utilise au cas ou plusieurs
 							candidats sont possibles ceui qui a la similarité la plus forte.
 						</li>
-					</ol>
+					</ol> {% endcomment %}
 				</aside>
 			</section>
 			<!-- <section>
